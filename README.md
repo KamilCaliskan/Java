@@ -1,5 +1,6 @@
 # Java
 
+scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?")
 
 The line scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?"); is used to skip any newline characters or 
 other line separator characters that might be present in the input stream. Let me break down what each part of this line does:
