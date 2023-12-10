@@ -20,17 +20,15 @@ DoNotTerminate sınıfının içinde, programın çıkışını kontrol etmek am
 (SecurityManager) oluşturulmuştur
 Bu yönetici, exitVM izni ile ilgili bir istisna fırlatır
 
-public static void forbidExit() {
-    final SecurityManager securityManager = new SecurityManager() {
-        @Override
-        public void checkPermission(Permission permission) {
-            if (permission.getName().contains("exitVM")) {
-                throw new ExitTrappedException();
-            }
-        }
-    };
-    System.setSecurityManager(securityManager);
-}
+Bu metod, bir iç içe geçmiş (nested) sınıf olan SecurityManager sınıfından türetilmiş bir anonim sınıf (anonymous class) içerir
+Bu anonim sınıf, checkPermission metodunu override ederek, 
+izin kontrolü yapar. Eğer izin "exitVM" içeriyorsa, 
+yasaklanmış bir çıkış işlemi olduğunu belirten özel bir istisna olan ExitTrappedException fırlatılır.
+
+Bu mekanizma, programın çıkış işlemine müdahale edilerek beklenmedik bir şekilde sonlanmasını önlemeye yöneliktir.
+Bu tür bir güvenlik önlemi genellikle öğrenci veya yarışma ortamlarında,
+örneğin HackerRank veya Codeforces gibi platformlarda kullanılabilir
+
 */
 
 import java.util.*;
