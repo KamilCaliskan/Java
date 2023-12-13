@@ -18,23 +18,14 @@ Bu durumda, IP adreslerinin belirli bir formatta olup olmadığını kontrol etm
     Bu adımlar dört kez tekrarlanır, çünkü IP adresi dört bölümden oluşur.
 
     $: Dizinin sonunu belirtir.
-Sample Input
+Sample Input                            sample Ouput
 
-000.12.12.034
-121.234.12.12
-23.45.12.56
-00.12.123.123123.123
-122.23
-Hello.IP
-
-Sample Output
-
-true
-true
-true
-false
-false
-false
+000.12.12.034                           true
+121.234.12.12                           true
+23.45.12.56                             true
+00.12.123.123123.123                    false
+122.23                                  false 
+Hello.IP                                false
 
 */
 
